@@ -1,6 +1,7 @@
+## Kröfur fyrir keyrslu
 Eftirfarandi þarf að vera sett upp á tölvunni
-   -Python
-   -SQLite
+   - Python
+   - SQLite
 
 # Liður 1 - Tíðni nafna á Íslandi 
 
