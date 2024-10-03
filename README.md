@@ -29,6 +29,60 @@ Til að keyra þetta verkefni þarftu að fylgja þessum skrefum:
      ```bash
      sqlite3 1_Tíðni_nafna_á_Íslandi/names_freq.db < 1_Tíðni_nafna_á_Íslandi/names.sql
      ```
+# SQLite-Greyjoy Verkefni
+
+## Yfirlit
+
+Þetta verkefni vinnur með `isfolkid.db` SQLite gagnagrunninn, sem inniheldur gögn tengd bókabálkinum *Saga Ísfólksins* eftir Margit Sandemo. Verkefnið felur í sér að framkvæma SQL fyrirspurnir til að fá upplýsingar um persónur, bækur og fjölskyldutengsl.
+
+## Forkröfur
+
+Til að keyra þetta verkefni þarftu eftirfarandi:
+- Gagnagrunnsskrána (`isfolkid.db`) í `sqlite-greyjoy\data` og SQL skipanaskrána (`isfolkid.sql`) í `sqlite-greyjoy` möppunni.
+
+## Hvernig á að keyra kóðann
+
+Til að keyra fyrirspurnirnar á `isfolkid.db`, fylgdu eftirfarandi skrefum:
+
+### 1. Opnaðu skipanaglugga (Command Prompt)
+
+1. Ýttu á `Win + R`, skrifaðu `cmd`, og ýttu á Enter.
+2. Færðu þig í verkefnamöppuna `sqlite-greyjoy` með því að nota `cd` skipunina. Dæmi:
+
+   ```bash
+   cd path\to\sqlite-greyjoy
+   ```
+
+### 2. Keyrðu SQLite3
+
+Til að keyra SQLite gagnagrunninn með `isfolkid.db` skrána skaltu skrifa:
+
+```bash
+sqlite3 data/isfolkid.db
+```
+
+Þetta mun opna SQLite3 gagnagrunnsgluggann og tengja við `isfolkid.db` gagnagrunninn.
+
+### 3. Hladdu inn SQL fyrirspurnunum úr skránni
+
+Til að framkvæma allar SQL fyrirspurnir í einu úr skránni `isfolkid.sql`, notaðu:
+
+```bash
+.read isfolkid.sql
+```
+
+Þetta keyrir allar fyrirspurnir sem eru skilgreindar í `isfolkid.sql` skránni og birtir niðurstöður.
+
+## Keyra einstakar SQL skipanir
+
+Ef þú vilt keyra einstaka SQL fyrirspurnir beint úr skipanaglugga án þess að opna SQLite gagnagrunninn, geturðu notað eftirfarandi skipan:
+
+```bash
+sqlite3 data/isfolkid.db "SELECT COUNT(*) AS adalpersonur FROM books;"
+```
+
+Þetta mun keyra SQL fyrirspurnina án þess að opna gagnagrunnsgluggann.
+
 
 
 # Liður 3 - Lýsing á kóða fyrir úrslitavinnslu frá tímataka.net (Fyrir branchinn lidur3regex, forritið lidur3regex.py)
