@@ -1,4 +1,4 @@
-# 1. Tíðni nafna á Íslandi - Verkefni
+# Liður 1 - Tíðni nafna á Íslandi 
 
 Þetta verkefni vinnur með tíðnigögn um eiginnöfn og millinöfn á Íslandi úr tveimur CSV skrám: `first_names_freq.csv` og `middle_names_freq.csv`. Gögnin eru lesin inn í SQLite gagnagrunn, þar sem þau eru unnin, sameinuð og greind til að svara spurningum um hópmeðlimi með ákveðin nöfn.
 
@@ -29,3 +29,38 @@ Til að keyra þetta verkefni þarftu að fylgja þessum skrefum:
      ```bash
      sqlite3 1_Tíðni_nafna_á_Íslandi/names_freq.db < 1_Tíðni_nafna_á_Íslandi/names.sql
      ```
+
+
+# Liður 3 - Lýsing á kóða fyrir úrslitavinnslu frá tímataka.net (Fyrir branchinn lidur3regex)
+
+Þessi Python kóði er notaður til að sækja og vinna með hlaupaúrslit frá tímataka.net, vista gögnin í CSV skrár og metadata í JSON eða CSV formi. Kóðinn notar reglulegar segðir (regex) til að finna og greina dálkaheiti, línur og viðeigandi gögn úr HTML skjalinu fyrir hvert hlaup.
+
+## Virkni kóðans
+
+### Aðalhlutverk kóðans
+1. **Les hlekki** úr tiltekinni textaskrá **urls.txt** sem innihalda lista af vefsíðum með hlaupaúrslitum.
+2. **Sækir HTML gögn** frá þessum vefsíðum.
+3. **Greinir dálkaheiti og gögn** (þátttakendur, tímar, kyn o.fl.) úr HTML-inu með reglulegum segðum.
+4. **Vistar niðurstöður** í CSV skrár (í okkar tilviki 75 skrár) þar sem gögnin eru skipulögð í dálka: `id`, `hlaup_id`, `nafn`, `timi`, `kyn`, `aldur`.
+5. **Skrifar metadata** um hlaup, svo sem heiti hlaups, þátttakendafjölda, byrjunar- og endatíma, og auðkenni hlaups.
+6. Ef `--debug` flagg er sett, vistast HTML skrár fyrir hverja vefsíðu til frekari skoðunar.
+
+### Aðal föll kóðans
+- `read_links_from_file(file_path)`: Les hlekki úr textaskrá.
+- `parse_column_headers(html)`: Notar regex til að finna og greina dálkaheiti í HTML töflum.
+- `parse_participant_rows(html)`: Notar regex til að finna allar línur (rows) með þátttakendagögnum.
+- `parse_participant_data(row)`: Notar regex til að sækja dálkagögn fyrir hvern þátttakanda.
+- `fetch_html(url)`: Sækir HTML gögn frá tilteknum hlekk.
+- `skrifa_nidurstodur(data, output_file)`: Vistar gögnin í CSV skrá.
+- `parse_race_metadata(html)`: Finnur upplýsingar um hlaup, svo sem nafn, fjölda þátttakenda og tíma.
+- `skrifa_metadata(output_file_base, idx, html)`: Vistar metadata í JSON og CSV skrár.
+
+## Hvernig kóðinn er keyrður
+
+Kóðinn er keyrður með eftirfarandi skipun í terminal:
+
+```bash
+python3 lidur3regex.py --links_file /Users/einargeirgudnason/Documents/GitHub/sqlite-greyjoy/sql1/urls.txt --output_dir results/ --metadata_output metadata.json --debug
+
+
+
