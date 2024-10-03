@@ -1,3 +1,7 @@
+Eftirfarandi þarf að vera sett upp á tölvunni
+-Python
+-SQLite
+
 # Liður 1 - Tíðni nafna á Íslandi 
 
 Þetta verkefni vinnur með tíðnigögn um eiginnöfn og millinöfn á Íslandi úr tveimur CSV skrám: `first_names_freq.csv` og `middle_names_freq.csv`. Gögnin eru lesin inn í SQLite gagnagrunn, þar sem þau eru unnin, sameinuð og greind til að svara spurningum um hópmeðlimi með ákveðin nöfn.
