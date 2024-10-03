@@ -22,33 +22,37 @@
 > viðeigandi markdown merkingar til að greina þær frá kóða (þ.e. nota \`\`\`bash skipanalína
 > \`\`\` eða \`\`\`sql SELECT * FROM tbl;\`\`\`.).
 
-## 1. Tíðni nafna á Íslandi
+# Tíðni nafna á Íslandi - Verkefni
 
-Verkefnið felur í sér að sameina tíðnigögn úr tveimur CSV skrám,
+Þetta verkefni vinnur með tíðnigögn um eiginnöfn og millinöfn á Íslandi úr tveimur CSV skrám: `first_names_freq.csv` og `middle_names_freq.csv`. Gögnin eru lesin inn í SQLite gagnagrunn, þar sem þau eru unnin, sameinuð og greind til að svara spurningum um hópmeðlimi með ákveðin nöfn.
 
-- [first_names_freq.csv](data/first_names_freq.csv)
-- [middle_names_freq.csv](data/middle_names_freq.csv)
+## Virkni kóðans
 
-í SQLite gagnagrunn [names_freq.db](data/names_freq.db).
-Nemendur munu búa til eina töflu í gagnagrunninum til að geyma og vinna úr þessum gögnum.
+1. **Hleðsla gagna:** Kóðinn les gögnin úr tveimur CSV skrám, setur þau í töflur í SQLite gagnagrunninn, og bætir við dálknum `type` sem skilgreinir hvort nafnið sé eiginnöfn eða millinöfn.
+   
+2. **Greining:** Að lokinni innsetningu eru eftirfarandi spurningar svaraðar með SQL fyrirspurnum:
+   - Hvaða hópmeðlimur á algengasta eiginnafnið? (Einar, Guðný, Halldór eða Valur)
+   - Hvenær voru þessi nöfn vinsælust?
+   - Hvenær komu þessi nöfn fyrst fram?
 
-1. Búið til töflu sem inni heldur gögn um eiginnöfn og millinöfn ásamt tíðni þeirra.
-    - Töflunafn: `names`
-    - Dálkar: `name`, `year`, `frequency`, `type`
-        - `name`: Eiginnafn eða millinafn
-        - `year`: Ár sem tíðnin er fyrir
-        - `count`: Tíðni nafnsins
-        - `type`: Tegund nafns, segir til hvort nafnið sé eiginnafn eða millinafn
-    - Þið þurfið að skilgreina hvaða dálkur (eða dálkar) eru aðallykill töflunnar.
-    - Notið dálkagerð sem hentar best fyrir gögnin (reynið að nota minnsta mögulega gagnategund).
-2. **Greining**: Greinið tíðni nafna **allra** hópmeðlima teymsins út frá þessum gögnum. Notið
-   _eina_
-   SQL fyrirspurn til að svara hverju af eftirfarandi spurningum:
-    - Hvaða hópmeðlimur á algengasta eiginnafnið?
-    - Hvenær voru öll nöfnin vinsælust?
-    - Hvenær komu þau fyrst fram?
-3. Skilið skipanaskrá `names.sql` sem a) býr til töfluna, b) les gögnin inn í töfluna og c) svarar
-   spurningunum í lið 2.
+3. **Niðurstöður:** Fyrirspurnir skila niðurstöðum fyrir tíðni, vinsælustu árin, og fyrsta árið sem nöfnin birtust í gagnagrunninum.
+
+## Keyrsla verkefnisins
+
+Til að keyra þetta verkefni þarftu að fylgja þessum skrefum:
+
+1. **Staðsetning skrár:**
+   - Gakktu úr skugga um að eftirfarandi skrár séu í sqlite-greyjoy möppunni:
+     - `data/first_names_freq.csv`
+     - `data/middle_names_freq.csv`
+     - `1_Tíðni_nafna_á_Íslandi/names.sql`
+
+2. **Búa til og hlaða SQLite gagnagrunninn:**
+   - Farðu í sqlite-greyjoy möppuna
+   - Keyrðu eftirfarandi skipun í skipanalínu eða Command Prompt til að keyra SQL skrána og búa til gagnagrunninn:
+     ```bash
+     sqlite3 1_Tíðni_nafna_á_Íslandi/names_freq.db < 1_Tíðni_nafna_á_Íslandi/names.sql
+     ```
 
 ## 2. Saga Ísfólksins
 
