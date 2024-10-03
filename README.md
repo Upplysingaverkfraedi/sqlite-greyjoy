@@ -31,7 +31,7 @@ Til að keyra þetta verkefni þarftu að fylgja þessum skrefum:
      ```
 
 
-# Liður 3 - Lýsing á kóða fyrir úrslitavinnslu frá tímataka.net (Fyrir branchinn lidur3regex)
+# Liður 3 - Lýsing á kóða fyrir úrslitavinnslu frá tímataka.net (Fyrir branchinn lidur3regex, forritið lidur3regex.py)
 
 Þessi Python kóði er notaður til að sækja og vinna með hlaupaúrslit frá tímataka.net, vista gögnin í CSV skrár og metadata í JSON eða CSV formi. Kóðinn notar reglulegar segðir (regex) til að finna og greina dálkaheiti, línur og viðeigandi gögn úr HTML skjalinu fyrir hvert hlaup.
 
