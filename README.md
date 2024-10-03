@@ -60,7 +60,8 @@ Til að keyra þetta verkefni þarftu að fylgja þessum skrefum:
 Kóðinn er keyrður með eftirfarandi skipun í terminal:
 
 ```bash
-python3 lidur3regex.py --links_file /Users/einargeirgudnason/Documents/GitHub/sqlite-greyjoy/sql1/urls.txt --output_dir results/ --metadata_output metadata.json --debug
+python3 lidur3regex.py --links_file /Slóð/Að/Þínni/Textaskrá/urls.txt --output_dir results/ --metadata_output metadata.json --debug
 
+Hér er vert að athuga að setja slóðina þína að textaskránni (urls.txt) í þessa skpun.
 
 
