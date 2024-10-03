@@ -29,7 +29,7 @@ Til að keyra þetta verkefni þarftu að fylgja þessum skrefum:
      ```bash
      sqlite3 1_Tíðni_nafna_á_Íslandi/names_freq.db < 1_Tíðni_nafna_á_Íslandi/names.sql
      ```
-# SQLite-Greyjoy Verkefni
+# Liður 2 - Saga Ísfólksins
 
 ## Yfirlit
 
