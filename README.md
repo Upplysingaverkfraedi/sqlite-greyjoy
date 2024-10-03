@@ -61,6 +61,7 @@ Kóðinn er keyrður með eftirfarandi skipun í terminal:
 
 ```bash
 python3 lidur3regex.py --links_file /Slóð/Að/Þínni/Textaskrá/urls.txt --output_dir results/ --metadata_output metadata.json --debug
+```bash
 
 Hér er vert að athuga að setja slóðina þína að textaskránni (urls.txt) í þessa skpun.
 
