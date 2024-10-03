@@ -313,5 +313,6 @@ sqlite3 timataka.db
 
 
 Hér er vert að athuga að setja slóðina þína að textaskránni (urls.txt) í þessa skpun.
+einnig þarf að breyta öllum filepaths í liður3regex.py, merge_csvs.py og fixed_csvs.py í þitt rétt filepath fyrir þína tölvu
 
 
